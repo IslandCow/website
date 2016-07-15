@@ -13,36 +13,8 @@ h1, h2, h3, h4, h5, h6, p, td, th {
   font-family: lucida grande, geneva, helvetica, arial, sans-serif;
 }
 
-.jumbotron {
-  border-radius: 8px;
-  padding: 1px 20px 10px;
-/*  padding-bottom: 20px;
-  padding-top: 1px;*/
-}
-
-#pwg-rolling, #pwg-rolling .carousel-inner {
-  height: 300px;
-}
-
 .form-horizontal .control-label {
   padding-top: 0px;
-}
-
-#pwg-rolling ol.carousel-indicators {
-  bottom: 10px;
-}
-
-#pwg-rolling ol.carousel-indicators li {
-  border-color: #909078;
-}
-
-#pwg-rolling ol.carousel-indicators li.active {
-  background: #d0d0c8;
-}
-
-h1, .jumbotron h1 {
-  font-size: 200%;
-  font-weight: bold;
 }
 
 h1.pwg-title {
@@ -222,19 +194,8 @@ P.PWGList A {
 
 /* Appearance tweaks for navigation bar */
 .pwg-navbar {
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  margin: 0px 10px;
-  -moz-border-radius-bottomleft: 8px;
-  -moz-border-radius-bottomright: 8px;
-  -moz-border-radius-topleft: 0px;
-  -moz-border-radius-topright: 0px;
-  -webkit-border-bottom-left-radius: 8px;
-  -webkit-border-bottom-right-radius: 8px;
-  -webkit-border-top-left-radius: 0px;
-  -webkit-border-top-right-radius: 0px;
+  background: rgba(24, 24, 20, 0.9);
+  margin: 0px 0px;
 }
 
 #pwg-search-form {
@@ -364,8 +325,26 @@ a.gsc-trailing-more-results:link {
 /* Body content */
 #pwg-body {
   margin: 0px;
-  padding: 60px 10px 50px; /* top right+left bottom */
+  padding: 60px 0px 50px; /* top right+left bottom */
 }
+
+/* Logo colors are white, black, and #373e80 */
+.pwg-panel-logo { width: 100%; }
+.pwg-panel { font-size: 125%; padding: 80px 60px; }
+.pwg-panel h1 { font-size: 250%; }
+.pwg-note { font-size: 80%; font-style: italic; margin-bottom: 1em; margin-top: 1em; }
+ul.nav-pills li { background: #525dbf; border-radius: 5px; color: #ffffff; font-size: 90%; margin-bottom: 5px; margin-right: 5px; }
+ul.nav-pills li a { color: #ffffff; }
+ul.nav-pills li a:hover { background: #8a8fbf; color: #ffffff; }
+.pwg-table { font-size: 80%; margin-left: auto; margin-right: auto; width: 90%; }
+.pwg-alt-0 { background: #e7eef1; color: #000000; }
+.pwg-table-alt-0 { background: #f0f7fa; }
+.pwg-alt-1 { background: #e6e8ff; color: #000000; }
+.pwg-table-alt-1 { background: #f2f3ff; }
+.pwg-alt-2 { background: #373e80; color: #ffffff; }
+.pwg-table-alt-2 { background: #8a8fbf; }
+caption { font-style: italic; font-weight: bold; margin: 10px; }
+.pwg-figure { width: 100%; }
 
 #pwg-content {
 }
@@ -373,21 +352,14 @@ a.gsc-trailing-more-results:link {
 /* Footer */
 #pwg-footer {
   background: rgba(24, 24, 20, 0.9);
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
   bottom: 0px;
   box-shadow: 0px 0px 5px rgba(0,0,0,0.2) inset;
   clear: both;
   color: #cccccc;
   font-size: 10px;
-  left: 10px;
+  left: 0px;
   position: fixed;
-  right: 10px;
-/*  margin: 10px 10px 0px;*/ /* top right+left bottom */
-  -moz-border-radius-topleft: 8px;
-  -moz-border-radius-topright: 8px;
-  -webkit-border-top-left-radius: 8px;
-  -webkit-border-top-right-radius: 8px;
+  right: 0px;
 }
 
 #pwg-footer-body {
@@ -413,6 +385,9 @@ a.gsc-trailing-more-results:link {
   #pwg-body {
     padding: 10px 10px 50px;
   }
+
+  .pwg-panel { font-size: 100%; padding: 30px 20px; }
+  .pwg-panel h1 { font-size: 200%; padding: 30px 20px; }
 
   #pwg-footer {
     margin: -50px 20px 0px 0px; /* top right bottom left */
