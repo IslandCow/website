@@ -326,11 +326,40 @@ printer_validate_plist($plist,		// I - plist to validate
   if (sizeof($plist["Tests"]) != $tests[$fileid])
     return ("Wrong number of Tests in plist file.");
 
-  if (!$plist["Successful"])
+  $successful = $plist["Successful"];
+
+  if (!$successful)
   {
-    if ($print_server && $file == "ipp")
+    if ($file == "bonjour")
     {
-      // Allow I-9 printer-supply checks and I-27 media-needed checks to fail
+      // Auto-exceptions for all printers:
+      //
+      //   B-4/B-5.5 Allow rp values other than ipp/print and ipp/print/*
+      $successful = TRUE;
+      for ($i = 0; $successful && $i < sizeof($plists["Tests"]); $i ++)
+      {
+        if (!$plist["Tests"][$i]["Successful"])
+        {
+          if ($i == 3 || $i == 9)
+          {
+            // B-4 and B-5.5 TXT values tests
+            foreach ($plist["Tests"][$i]["Errors"] as $error)
+            {
+              if (!preg_match("/^rp has bad value/", $error))
+                $successful = FALSE;
+            }
+          }
+          else
+            $successful = FALSE;
+        }
+      }
+    }
+    else if ($file == "ipp" && $print_server)
+    {
+      // Auto-exceptions for print servers:
+      //
+      //   I-9 identify-actions, media-col-ready, media-ready, operations-supported, printer-device-id, and printer-supply checks
+      //   I-27 media-needed checks
       $successful = TRUE;
       for ($i = 0; $successful && $i < sizeof($plists["Tests"]); $i ++)
       {
@@ -338,11 +367,14 @@ printer_validate_plist($plist,		// I - plist to validate
         {
           if ($i == 8)
           {
-            // I-9 printer-supply exceptions
+            // I-9 exceptions
             foreach ($plist["Tests"][$i]["Errors"] as $error)
             {
-              if (!preg_match("/^EXPECTED: printer-supply/", $error))
+              if (!preg_match("/^EXPECTED: media-col-ready/", $error) && !preg_match("/^EXPECTED: media-ready/", $error) && !preg_match("/^EXPECTED: identify-actions-/", $error)&& !preg_match("/^EXPECTED: printer-device-id/", $error) && !preg_match("/^EXPECTED: printer-supply/", $error) && !preg_match("/^EXPECTED: operations-supported WITH-VALUE \"0x003c\"/", $error)
+              {
                 $successful = FALSE;
+                break;
+              }
             }
           }
           else if ($i != 26)
@@ -351,10 +383,12 @@ printer_validate_plist($plist,		// I - plist to validate
       }
     }
 
-    return ("Not all tests were successful.");
   }
 
-  return ("");
+  if ($successful)
+    return ("");
+  else
+    return ("Not all tests were successful.");
 }
 
 ?>
