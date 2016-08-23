@@ -172,7 +172,7 @@ site_header($title = "",		// I - Additional document title
   print("<title>$html_title Printer Working Group</title>\n"
        ."<link rel=\"stylesheet\" type=\"text/css\" href=\"//www.google.com/cse/style/look/default.css\" type=\"text/css\">\n"
        ."<link rel=\"stylesheet\" type=\"text/css\" href=\"${html_path}dynamo/resources/bootstrap-3.2.0.min.css\">\n"
-       ."<link rel=\"stylesheet\" type=\"text/css\" href=\"${html_path}dynamo/resources/bootstrap-theme-3.2.0.min.css\">\n"
+       ."<!-- <link rel=\"stylesheet\" type=\"text/css\" href=\"${html_path}dynamo/resources/bootstrap-theme-3.2.0.min.css\"> -->\n"
        ."<link rel=\"stylesheet\" type=\"text/css\" href=\"${html_path}dynamo/resources/pwg.css\">\n"
        ."<link rel=\"alternate\" title=\"Printer Working Group RSS\" "
        ."type=\"application/rss+xml\" href=\"${html_path}rss/index.rss\">\n"
