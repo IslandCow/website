@@ -17,7 +17,7 @@ h1, h2, h3, h4, h5, h6, p, td, th {
   padding-top: 0px;
 }
 
-div.pwg-content h1, div.pwg-content h2, div.pwg-content h3, div.pwg-content p {
+#pwg-content h1, #pwg-content h2, #pwg-content h3, #pwg-content p {
   padding-left: 15px;
   padding-right: 15px;
 }
