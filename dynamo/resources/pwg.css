@@ -1,6 +1,18 @@
 /* Standard fonts and colors */
 /* PWG logo color is #4b5aa8, highlight is #b8c3ff, lowlight is #262d54 */
 
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
+@import 'https://fonts.googleapis.com/css?family=Source+Code+Pro';
+
+* {
+  font-family: 'Lato', Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+code, kbd, p.command, p.summary, pre {
+  font-family: 'Source Code Pro', monospace;
+}
+
 body {
   background-color: #fff;
   color: #000;
@@ -15,15 +27,6 @@ h1, h2, h3, h4, h5, h6, p, td, th {
 
 .form-horizontal .control-label {
   padding-top: 0px;
-}
-
-#pwg-content > h1, #pwg-content > h2, #pwg-content > h3, #pwg-content > p {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-h1.pwg-title {
-  margin: 0px 0px 20px;
 }
 
 h1 small {
@@ -122,6 +125,21 @@ input[type="checkbox"] {
   height: 16px !important;
 }
 
+.panel-heading {
+  font-weight: bold;
+}
+
+
+/* PWG-specific styles */
+#pwg-content > h1, #pwg-content > h2, #pwg-content > h3, #pwg-content > p {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+h1.pwg-title {
+  margin: 0px 0px 20px;
+}
+
 .pwg-logo {
   height: 190px;
   margin: -15px 15px 0px -10px; /* top right bottom left */
@@ -130,10 +148,6 @@ input[type="checkbox"] {
 
 .pwg-right {
   float: right;
-}
-
-.panel-heading {
-  font-weight: bold;
 }
 
 .pwg-alert-panel {
@@ -241,25 +255,34 @@ caption { font-style: italic; font-weight: bold; margin: 10px; }
 #pwg-content {
 }
 
+/* Header */
+.pwg-header {
+  background: #181814;
+  background-image: linear-gradient(#181814, #4b5aa8);
+  padding: 50px 0px;
+  width: 100%;
+}
+
+.pwg-header h1, .pwg-header h2, .pwg-header p, .pwg-header a {
+  color: #fff;
+}
+
 /* Footer */
 #pwg-footer {
-  background: rgba(24, 24, 20, 0.9);
-  bottom: 0px;
-  box-shadow: 0px 0px 5px rgba(0,0,0,0.2) inset;
-  clear: both;
-  color: #cccccc;
-  font-size: 10px;
-  left: 0px;
-  position: fixed;
-  right: 0px;
+  background: #181814;
+  background-image: linear-gradient(#4b5aa8, #181814);
+  padding: 15px 0px;
+  margin: 20px 0px 0px 0px;
+  width: 100%;
 }
 
 #pwg-footer-body {
+  color: #fff;
   padding: 10px;
 }
 
 #pwg-footer-body a {
-  color: #ccccc0;
+  color: #fff;
   text-decoration: underline;
 }
 
@@ -282,8 +305,9 @@ caption { font-style: italic; font-weight: bold; margin: 10px; }
   .pwg-panel h1 { font-size: 200%; padding: 30px 20px; }
 
   #pwg-footer {
-    margin: -50px 20px 0px 0px; /* top right bottom left */
+/*
     position: relative;
+    margin: -50px 20px 0px 0px; /* top right bottom left */
   }
 
   h1 {
