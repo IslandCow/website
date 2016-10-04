@@ -4,6 +4,7 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
 @import 'https://fonts.googleapis.com/css?family=Source+Code+Pro';
 
+/* *, p, h1, h2, h3, h4, h5, h6, td, th { */
 * {
   font-family: 'Lato', Helvetica, sans-serif;
   line-height: 1.5;
@@ -16,13 +17,8 @@ code, kbd, p.command, p.summary, pre {
 body {
   background-color: #fff;
   color: #000;
-  font-family: lucida grande, geneva, helvetica, arial, sans-serif;
   font-size: 16px;
   margin: 0px;
-}
-
-h1, h2, h3, h4, h5, h6, p, td, th {
-  font-family: lucida grande, geneva, helvetica, arial, sans-serif;
 }
 
 .form-horizontal .control-label {
