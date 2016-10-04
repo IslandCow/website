@@ -74,6 +74,17 @@ print("    <ul class=\"nav nav-pills\"><li role=\"presentation\"><a href=\"${htm
       <li role="presentation"><a href="#PARTICIPATING">Participating</a></li>
       <li role="presentation"><a href="#JOINING">Joining the PWG</a></li>
     </ul>
+=======
+  <div class="col-md-3 col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">IPP Everywhere</div>
+      <div class="panel-body">
+	<p>Print to any network or USB printer without using special software from the manufacturer.</p>
+	<p><a class="btn btn-default btn-sm" href="<?print($html_path);?>ipp/everywhere.html">More Info</a>
+	&nbsp;<a class="btn btn-default btn-sm" href="<?print($html_path);?>dynamo/eveprinters.php">Find Printers</a></p>
+      </div>
+    </div>
+>>>>>>> origin/master
   </div>
 </div>
 <div class="row pwg-panel pwg-alt-1">
