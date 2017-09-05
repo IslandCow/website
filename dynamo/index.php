@@ -60,6 +60,16 @@ print("    <ul class=\"nav nav-pills\"><li role=\"presentation\"><a href=\"${htm
 //     ."  <div class=\"col-md-12 col-sm-12\">\n");
 
 ?>
+<!--- <div class="row">
+  <div class="col-md-3 col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">3D Printing</div>
+      <div class="panel-body">
+        <p>The PWG has defined an IPP extension for 3D printing using standard file formats and an associated XML print job ticket format.</p>
+        <p><a class="btn btn-default btn-sm" href="<?print($html_path);?>3d">More Info</a></p>
+      </div>
+    </div>
+-->
   </div>
 </div>
 <div class="row pwg-panel pwg-alt-0">
